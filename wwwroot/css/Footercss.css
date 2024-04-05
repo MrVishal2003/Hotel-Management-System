@@ -1,0 +1,70 @@
+﻿.footer {
+    display: flex;
+    background-color: #480404;
+    color: white;
+    padding: 25px;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: space-around
+}
+
+.info, .contact-form {
+    width: 45%;
+}
+
+    .contact-form input[type=text],
+    .contact-form input[type=email],
+    .contact-form textarea {
+        width: calc(50% - 5px); /* Adjusted width to accommodate spacing */
+        margin-bottom: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .contact-form textarea {
+        width: 100%;
+        height: 80px;
+    }
+
+/*button {
+    background-color: #fff;
+    color: #480404;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}*/
+
+button {
+    background-color: #FED8B1;
+    color: #480404;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form h2 {
+    margin-right: 20px;
+}
+
+/* Adjustments for First Name and Last Name */
+.contact-form input[type=text] {
+    display: inline-block;
+}
+
+    /* Adjustments for Last Name */
+    .contact-form input[type=text]:last-child {
+        margin-left: 10px; /* Adjust spacing between First and Last Name */
+    }
+
+/* Divider style */
+.divider {
+    width: 2px;
+    background-color: #FED8B1;
+    margin: 0 20px;
+}

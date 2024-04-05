@@ -1,0 +1,137 @@
+﻿
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links with a hash (#)
+        $("a[href^='#']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+@model Hotel_Management_System.Models.RegisterModel
+<form class="mt-8 space-y-6" method="post">
+
+<section class="custom-container custom-forms">
+    <div class="custom-form custom-login-form">
+        <div class="custom-form-content">
+            <div class="maroon-belt">Urban sanctuary</div>
+            <div class="custom-header">Sign Up</div>
+
+            <div class="new-field new-name">
+                    <input 
+                           type="text"
+                           asp-for="FirstName"
+                           class="pl-11 mb-4 border-solid border-t-0 border-l-0 border-r-0 border-b-stone-400 border-b-2 w-full px-10 py-2 sm:text-1.5xl focus:outline-none"
+                           placeholder="First Name" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+
+                
+                    <input id="username"
+                           type="text"
+                           asp-for="LastName"
+                           class="pl-11 mb-4 border-solid border-t-0 border-l-0 border-r-0 border-b-stone-400 border-b-2 w-full px-10 py-2 sm:text-1.5xl focus:outline-none"
+                           placeholder="Last Name" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="custom-field">
+                    <input id="email-address"
+                           type="email"
+                           autoComplete="email"
+                           asp-for="Email"
+                           class="pl-11 mb-4 border-solid border-t-0 border-l-0 border-r-0 border-b-stone-400 border-b-2 w-full px-10 py-2 sm:text-1.5xl focus:outline-none"
+                           placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="custom-field">
+                    <input id="PhoneNumber"
+                           type="PhuneNumber"
+                           autoComplete="email"
+                           asp-for="PhoneNumber"
+                           class="pl-11 mb-4 border-solid border-t-0 border-l-0 border-r-0 border-b-stone-400 border-b-2 w-full px-10 py-2 sm:text-1.5xl focus:outline-none"
+                           placeholder="PhuneNumber" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="custom-field">
+                    <input id="password"
+                           type="password"
+                           asp-for="Password"
+                           class="pl-11 mb-4 border-solid border-t-0 border-l-0 border-r-0 border-b-stone-400 border-b-2 w-full px-10 py-2 sm:text-1.5xl focus:outline-none"
+                           placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                <i class="bx bx-hide custom-eye-icon"></i>
+            </div>
+
+            <div class="custom-field">
+                    <input id="cpassword"
+                           type="password"
+                           asp-for="ConfirmPassword"
+                           class="pl-11 mb-4 border-solid border-t-0 border-l-0 border-r-0 border-b-stone-400 border-b-2 w-full px-10 py-2 sm:text-1.5xl focus:outline-none"
+                           placeholder="Conform Password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <i class="bx bx-hide custom-eye-icon"></i>
+            </div>
+
+                <div class="custom-form-link">
+                    <span> Conditions and <a asp-action="Terms" asp-controller="Home" class="">Terms</a></span>
+                </div>
+
+            <div class="custom-form-link">
+                <span>Already have an account? <a asp-action="Login" asp-controller="Home" class="">Login</a></span>
+            </div>
+
+        </div>
+
+        <div class="custom-field">
+            <button>Sign Up</button>
+        </div>
+
+    </div>
+
+    </div>
+    
+    
+</section>
+</form>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const passwordFields = document.querySelectorAll('.custom-field input[type="password"]');
+        const eyeIcons = document.querySelectorAll('.custom-eye-icon');
+
+        eyeIcons.forEach((icon, index) => {
+            icon.addEventListener('click', function () {
+                const passwordField = passwordFields[index];
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    icon.classList.remove('bx-hide');
+                    icon.classList.add('bx-show');
+                } else {
+                    passwordField.type = 'password';
+                    icon.classList.remove('bx-show');
+                    icon.classList.add('bx-hide');
+                }
+            });
+        });
+    });
+</script>}

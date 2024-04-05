@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Hotel Management System</title>
+
+    <link href="~/css/Headercss.css" rel="stylesheet" />
+    <link href="~/css/Footercss.css" rel="stylesheet" />
+    <link href="~/css/Mobile.css" rel="stylesheet" />
+    <link href="~/css/Boxcss.css" rel="stylesheet" />
+    <link href="~/css/Logincss.css" rel="stylesheet" />
+    <link href="~/css/Signupcss.css" rel="stylesheet" />
+    <link href="~/css/booking.css" rel="stylesheet" />
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    
+
+</head> 
+<body>
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @* <footer class="border-top footer text-muted"> *@
+    <div class="footer">
+    <div class="info">
+    <h2>Urban Sanctuary</h2>
+    <p>Address: Road 12, Peace Avenue, Ado Ekiti</p>
+    <p>Phone number: +2349061504648</p>
+    <p>Email: urban_sanctuary@gmail.com</p>
+    </div>
+
+    <div class="divider"></div> <!-- New divider element -->
+
+    <div class="contact-form">
+    <h2>Contact Us</h2>
+    <form action="#">
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name"><br>
+    <input type="email" placeholder="Email"><br>
+    <textarea placeholder="Message"></textarea><br>
+    <button type="submit" asp-action="Signup" asp-controller="Home">Register</button>
+    </form>
+    </div>
+    </div>
+   @*  </footer> *@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

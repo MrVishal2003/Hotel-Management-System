@@ -1,0 +1,200 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.custom-container-unique {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(220, 214, 214, 0.307);
+    column-gap: 30px;
+}
+
+.custom-form-unique {
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 46px;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.custom-header-unique {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+    padding: 2%;
+}
+
+.custom-form-content-unique {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-field-unique {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+    .custom-field-unique input {
+        height: 100%;
+        width: 186px;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 6px;
+        padding: 8px 15px;
+    }
+
+    .custom-field-unique button {
+        height: 100%;
+        width: 150px;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .custom-field-unique input {
+        outline: none;
+        padding: 0 15px;
+        border: 1px solid #030000;
+    }
+
+        .custom-field-unique input:focus {
+            border-bottom-width: 2px;
+        }
+
+.custom-eye-icon-unique {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.custom-field-unique button {
+    color: black;
+    font-weight: bold;
+    background-color: #fed8b1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    .custom-field-unique button:hover {
+        background-color: rgba(220, 214, 214, 0.307);
+    }
+
+@media screen and (max-width: 400px) {
+    .custom-form-unique {
+        padding: 20px 10px;
+    }
+}
+
+.maroon-belt-unique {
+    background-color: #480404;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: "Rochester", cursive;
+    color: #fed8b1;
+}
+
+/* Added CSS */
+.custom-form-content-unique {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-field-container-unique {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+    .custom-field-container-unique .custom-field-unique {
+        flex: 1;
+        position: relative;
+    }
+
+        .custom-field-container-unique .custom-field-unique select {
+            width: 186px;
+            height: 100%;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 6px;
+            border: 1px solid #030000;
+            outline: none;
+        }
+
+            .custom-field-container-unique .custom-field-unique select:focus {
+                border-bottom-width: 2px;
+            }
+
+.custom-field-container1-unique {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+    .custom-field-container1-unique .custom-field-unique {
+        flex: 1;
+        position: relative;
+    }
+
+        .custom-field-container1-unique .custom-field-unique select {
+            width: 186px;
+            height: 100%;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 6px;
+            border: 1px solid #030000;
+            outline: none;
+        }
+
+            .custom-field-container1-unique .custom-field-unique select:focus {
+                border-bottom-width: 2px;
+            }
+
+/* Added CSS for radio buttons */
+.custom-radio-container-unique {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.custom-radio-label-unique {
+    margin-right: 10px;
+}
+
+.custom-radio-input-unique {
+    margin-right: 5px;
+}

@@ -1,0 +1,257 @@
+﻿<head>
+    <style>
+
+        /* CSS for the first page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .background-image3 {
+            background-image: url("../Photos/1Gallery.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust darkness here */
+        }
+
+        .content {
+            color: white;
+            z-index: 1;
+        }
+
+            .content h1 {
+                margin-bottom: 20px;
+            }
+
+        #gallery2-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .gallery2-box {
+            height: 350px;
+            width: calc(40% - 50px);
+            background-size: cover;
+            background-position: center;
+            margin: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Add cursor pointer to indicate interactivity */
+        }
+
+        /* Additional styles for specific boxes */
+        .box11 {
+            background-image: url('../Photos/Hall.jpg');
+        }
+
+        .box22 {
+            background-image: url('../Photos/Hall2.jpg');
+        }
+
+        .box33 {
+            background-image: url('../Photos/pexels-cottonbro-studio-6466286.jpg');
+        }
+
+        .box44 {
+            background-image: url('../Photos/pexels-engin-akyurt-2771927.jpg');
+        }
+
+        .box55 {
+            background-image: url('../Photos/pexels-karl-solano-2883047.jpg');
+        }
+
+        .box66 {
+            background-image: url('../Photos/pexels-cottonbro-studio-5378694.jpg');
+        }
+
+        .box77 {
+            background-image: url('../Photos/pexels-cottonbro-studio-6474588.jpg');
+        }
+
+        .box88 {
+            background-image: url('../Photos/pexels-laura-paredis-16037761.jpg');
+        }
+
+        .box99 {
+            background-image: url('../Photos/pexels-leslie-torres-12087878.jpg');
+        }
+
+        .box100 {
+            background-image: url('../Photos/pexels-cottonbro-studio-6466288.jpg');
+        }
+
+        .box110 {
+            background-image: url('../Photos/pexels-rachel-claire-4577385.jpg');
+        }
+
+        .box120 {
+            background-image: url('../Photos/pexels-pixabay-277572.jpg');
+        }
+
+        .box130 {
+            background-image: url('../Photos/pexels-andrew-neel-3201765.jpg');
+        }
+
+        .box140 {
+            background-image: url('../Photos/pexels-max-rahubovskiy-6480198.jpg');
+        }
+
+        /* Zoom effect on hover */
+        .gallery2-box:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <span class="navbar-toggler-icon"></span>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy1-text" asp-area="right" asp-controller="Home" asp-action="Index">Urban sanctuary</a>
+                        </li>
+
+                        <div class="topnav-right">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Room">Room</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Gallary">Gallary</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Entertainment">Entertainment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Dinning">Dinning</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Login"><button class="btn btn-primary">Login</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links with a hash (#)
+        $("a[href^='#']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+<div class="background-image3">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>GALLERY</h1>
+    </div>
+</div>
+
+<div id="gallery2-container">
+
+    <div class="gallery2-box box11">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box22">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box33">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box44">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box55">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box66">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box77">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box88">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box99">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box100">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box110">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box120">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box130">
+        <h1></h1>
+    </div>
+    <div class="gallery2-box box140">
+        <h1></h1>
+    </div>
+
+</div>

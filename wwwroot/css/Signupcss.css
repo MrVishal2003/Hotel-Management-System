@@ -1,0 +1,274 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.custom-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(220, 214, 214, 0.307);
+    column-gap: 30px;
+}
+
+.custom-form {
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 46px;
+    /* Reduce padding from 30px to 20px */
+    border-radius: 6px;
+    background: #fff;
+}
+
+.custom-signup-form {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-forms.show-signup-form .custom-signup-form {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.custom-forms.show-signup-form .custom-login-form {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+    padding: 2%;
+}
+
+.custom-form-content {
+    margin-top: 30px;
+}
+
+.custom-field {
+    position: relative;
+    height: 40px;
+    /* Reduce height from 50px to 40px */
+    width: 100%;
+    margin-top: 10px;
+    /* Reduce margin top from 20px to 10px */
+    border-radius: 6px;
+}
+
+    .custom-field input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 6px;
+        padding: 8px 15px;
+        /* Adjust padding */
+    }
+
+    .custom-field button {
+        height: 100%;
+        width: 150px;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        /* Centers the button horizontally */
+    }
+
+    .custom-field input {
+        outline: none;
+        padding: 0 15px;
+        border: 1px solid #030000;
+    }
+
+        .custom-field input:focus {
+            border-bottom-width: 2px;
+        }
+
+.custom-eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.custom-field button {
+    color: black;
+    font-weight: bold;
+    /* Making the text bold */
+    background-color: #fed8b1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    .custom-field button:hover {
+        background-color: rgba(220, 214, 214, 0.307);
+    }
+
+.custom-form-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+    .custom-form-link span,
+    .custom-form-link a {
+        font-size: 14px;
+        font-weight: 400;
+        color: #ffa07a;
+    }
+
+.custom-form a {
+    color: #480404;
+    text-decoration: none;
+}
+
+.custom-line {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #480404;
+    padding: 0%;
+}
+
+    .custom-line::before {
+        content: "Or";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        color: #480404;
+        padding: 0 15px;
+    }
+
+.custom-media-options a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-google-img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
+.custom-google {
+    border: 1px solid #030000;
+}
+
+    .custom-google span {
+        font-weight: 500;
+        opacity: 0.6;
+        color: #232836;
+    }
+
+@media screen and (max-width: 400px) {
+    .custom-form {
+        padding: 20px 10px;
+    }
+}
+
+.maroon-belt {
+    background-color: #480404;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: "Rochester", cursive;
+    color: #fed8b1;
+}
+
+/* Add your CSS styles here */
+.custom-media-options {
+    text-align: center;
+}
+
+.custom-google {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    /* Adjust the color as needed */
+    margin: 1px;
+    /* Adjust the margin as needed */
+}
+
+    .custom-google img {
+        width: 30px;
+        /* Adjust the width as needed */
+        height: auto;
+        vertical-align: central;
+    }
+
+    .custom-google span {
+        margin-left: 40px;
+        /* Adjust the margin as needed */
+        vertical-align: middle;
+    }
+
+/* New CSS for first name and last name fields */
+.new-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .new-name input {
+        width: calc(47% - 5px);
+        /* Set each input to occupy half of the container with a margin in between */
+        padding: 10px;
+        border: 1px solid #030000;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+        .new-name input:first-child {
+            margin-right: 10px;
+            /* Adjust as needed */
+        }
+
+.new-tacbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Add space between tacbox and Signup button */
+}
+
+    .new-tacbox label {
+        margin-left: 5px;
+        padding: 1%;
+        /* Adjust margin as needed */
+    }
+
+    .new-tacbox a {
+        color: #480404;
+        text-decoration: none;
+        font-weight: 600;
+    }

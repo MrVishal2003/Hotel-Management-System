@@ -1,0 +1,56 @@
+﻿ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #480404; /* Adjust the alpha value as needed */
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+}
+
+.btn {
+    padding: 1px 1px; /* Adjusted padding for better visual appearance */
+    font-size: 20px;
+    background-color: #FED8B1;
+    color: black;
+    border: none;
+    border-radius: 150px; /* Increased border radius for rounded corners */
+    cursor: pointer;
+    width: 120px; /* Increased width */
+    display: inline-block; /* Ensures the button appears in the same line */
+}
+
+.fancy1-text,
+.fancy-text {
+    display: inline-block;
+    text-align: justify;
+}
+
+.fancy1-text {
+    font-family: 'Rochester', cursive;
+    color: #FED8B1;
+    font-size: xx-large; /* Adjust the font size as desired */
+    vertical-align: top;
+    padding-top: 1%; /* Align the text to the top */
+}
+
+.fancy-text {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}

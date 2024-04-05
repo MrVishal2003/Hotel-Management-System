@@ -1,0 +1,115 @@
+﻿
+  
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <span class="navbar-toggler-icon"></span>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy1-text" asp-area="right" asp-controller="Home" asp-action="Index">Urban sanctuary</a>
+                        </li>
+
+                        <div class="topnav-right">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Room">Room</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Gallary">Gallary</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Entertainment">Entertainment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Dinning">Dinning</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Login"><button class="btn btn-primary">Login</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links with a hash (#)
+        $("a[href^='#']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+<div class="background-image5">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>DINNING</h1>
+    </div>
+</div>
+
+<div id="gallery4-container">
+    <div class="gallery4-box">
+        <img src='../Photos/gujaratid.jpg' alt="Alternate Text" />
+        <h1>Gujarati</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/pexels-chan-walrus-958545.jpg' alt="Alternate Text" />
+        <h1>Punjabi</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/1401228.jpg' alt="Alternate Text" />
+        <h1>Chinese</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/pexels-engin-akyurt-1552642.jpg' alt="Alternate Text" />
+        <h1>Fast Food</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/pexels-teejay-1362534.jpg' alt="Alternate Text" />
+        <h1>Desert</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/pexels-engin-akyurt-2684260.jpg' alt="Alternate Text" />
+        <h1>Cold Drinks</h1>
+    </div>
+
+</div>

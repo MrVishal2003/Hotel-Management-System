@@ -1,0 +1,297 @@
+﻿<style>
+/* CSS for the first page */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.background-image {
+    background-image: url("../Photos/1Home.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+    .background-image1 {
+        background-image: url("../Photos/Rectangle 5.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust darkness here */
+}
+
+.content {
+    color: white;
+    z-index: 1;
+}
+
+    .content h1 {
+        margin-bottom: 20px;
+    }
+
+    .btn2 {
+        padding: 10px 20px;
+        font-size: 15px;
+        background-color: #fed8b1;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    CSS for the third page
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .section {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        width: 95vw;
+        margin: 50px auto;
+    }
+
+        .section img {
+            width: 1000px;
+            max-width: 600px;
+            height: 400px;
+            border: 2px solid black;
+            border-radius: 1px;
+        }
+
+    .section-content {
+        margin-top: 20px;
+        margin-bottom: 20px; /* Add margin at the bottom */
+    }
+
+    .section h1 {
+        color: black;
+        margin: 0;
+        text-align: left; /* Align the text to the left */
+    }
+
+    .section p {
+        color: black;
+        font-size: 20px;
+        margin: 0; /* Reset margin */
+        margin-bottom: 20px;
+        text-align: justify; /* Justify text */
+    }
+
+    .btn2 {
+        padding: 10px 20px;
+        font-size: 15px;
+        background-color: #fed8b1;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /* Grid color-profile images */
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+
+    .box {
+        flex: 0 0 calc(50% - 50px);
+        max-width: calc(33.33% - 40px);
+        height: 350px;
+        background-size: cover;
+        background-position: center;
+        margin: 20px;
+    }
+
+        .box:nth-child(1) {
+            background-image: url('../Photos/reception.jpg');
+        }
+
+        .box:nth-child(2) {
+            background-image: url('../Photos/pexels-max-rahubovskiy-6480198.jpg');
+        }
+
+        .box:nth-child(3) {
+            background-image: url('../Photos/pexels-cottonbro-studio-6466301.jpg');
+        }
+
+    h1 {
+        text-align: center;
+    }
+
+</style>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <span class="navbar-toggler-icon"></span>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy1-text" asp-area="right" asp-controller="Home" asp-action="Index">Urban sanctuary</a>
+                        </li>
+
+                        <div class="topnav-right">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Room">Room</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Gallary">Gallary</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Entertainment">Entertainment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Dinning">Dinning</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                        <div class="topnav-right" id="authButtons">
+                            <!-- Login button -->
+                        <li class="nav-item" id="loginBtn">
+                            <a asp-action="Login"><button class="btn btn-primary">Login</button></a>
+                        </li>
+                        <!-- Logout button (initially hidden) -->
+                        <li class="nav-item" id="logoutBtn">
+                            <a asp-action="Logout" asp-controller="Home"><button class="btn btn-primary">Logout</button></a>
+                        </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Function to toggle visibility of login/logout buttons based on authentication status
+        function toggleAuthButtons(isAuthenticated) {
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+
+            if (isAuthenticated) {
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+            } else {
+                loginBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+            }
+        }
+
+        // Call toggleAuthButtons when the page loads
+        window.onload = function () {
+            // Simulated authentication status, replace with your actual logic
+            const isAuthenticated = true; // Change to true if user is authenticated, false otherwise
+            toggleAuthButtons(isAuthenticated);
+        };
+    </script>
+
+
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links with a hash (#)
+        $("a[href^='#']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+
+<div class="background-image">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>A MEMORABLE EXPERIENCE</h1>
+        <form asp-controller="Home" asp-action="Room" method="post">
+            <button type="submit" class="btn2">Reserve Now</button>
+        </form>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-content">
+        <h1>About Hotel Urban Sanctuary</h1>
+        <p>The Urban Sanctuary Hotel is a sophisticated and contemporary urban retreat offering a luxurious experience in the heart of the city. With a large swimming pool, a well-equipped gym, an upscale restaurant and bar serving diverse cuisine, a rejuvenating spa, secure parking facilities, and a spacious banquet hall, the hotel is designed to cater to the needs of both leisure and business travelers. Guests can enjoy a refreshing swim, maintain their fitness routines, indulge in culinary delights, relax with spa treatments, and host events seamlessly in a stylish and convenient setting. The hotel aims to provide perfect balance of modern amenities and tranquil surroundings for a memorable and enjoyable stay.</p>
+        <form asp-controller="Home" asp-action="Gallary" method="post">
+            <button type="submit" class="btn2">Explore Now</button>
+        </form>
+
+    </div>
+    <img src="~/Photos/Hall.jpg" alt="Banquet Hall">
+</div>
+
+<div class="background-image1">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>HAPPENINGS</h1>
+        <h2>Events & Weddings</h2>
+    </div>
+</div>
+
+<h1>Our Galleries</h1>
+<div id="container">
+    <div class="box">
+        <h1></h1>
+    </div>
+    <div class="box">
+        <h1></h1>
+    </div>
+    <div class="box">
+        <h1></h1>
+    </div>
+</div>

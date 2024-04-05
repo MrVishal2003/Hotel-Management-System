@@ -1,0 +1,88 @@
+﻿
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+   
+}
+
+@model Hotel_Management_System.Models.Reservation
+
+<form asp-controller="Home" asp-action="BookRoom" method="post">
+    <section class="custom-container-unique custom-forms-unique">
+        <div class="custom-form-unique custom-login-form-unique">
+            <div class="custom-form-content-unique">
+                <div class="maroon-belt-unique">Urban sanctuary</div>
+                <div class="custom-header-unique">BOOK YOUR STAY</div>
+
+                <div class="custom-field-container-unique">
+                    <div class="custom-field-unique">
+                        <input asp-for="CheckInDate" class="form-control" placeholder="📅 Check-in Date" />
+                        <span asp-validation-for="CheckInDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="custom-field-unique">
+                        <input asp-for="CheckOutDate" class="form-control" placeholder="📅 Check-out Date" />
+                        <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="custom-field-container-unique">
+                    <div class="custom-field-unique">
+                        <select asp-for="NumberOfRooms" class="form-control custom-select-unique">
+                            <option value="">🛏️ Rooms</option>
+                            <option value="1">🛏️ 1</option>
+                            <option value="2">🛏️ 2</option>
+                            <option value="3">🛏️ 3</option>
+                        </select>
+                        <span asp-validation-for="NumberOfRooms" class="text-danger"></span>
+                    </div>
+
+                    <div class="custom-field-unique">
+                        <select asp-for="RoomFloor" class="form-control custom-select-unique">
+                            <option value="">🏢 Room Floor</option>
+                            <option value="1">🏢 1</option>
+                            <option value="2">🏢 2</option>
+                            <option value="3">🏢 3</option>
+                        </select>
+                        <span asp-validation-for="RoomFloor" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="custom-field-container-unique">
+                    <div class="custom-field-unique">
+                        <input asp-for="NumberOfAdults" class="form-control" placeholder="👥Number of Adults" />
+                        <span asp-validation-for="NumberOfAdults" class="text-danger"></span>
+                    </div>
+
+                    <div class="custom-field-unique">
+                        <input asp-for="NumberOfChildren" class="form-control" placeholder="👶Number of Children" />
+                        <span asp-validation-for="NumberOfChildren" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="custom-field-container-unique">
+                    <div class="custom-radio-unique">
+                        <input type="radio" asp-for="RoomType" value="ac" id="ac-unique">
+                        <label for="ac-unique">AC</label>
+                    </div>
+                    <div class="custom-radio-unique">
+                        <input type="radio" asp-for="RoomType" value="non-ac" id="non-ac-unique">
+                        <label for="non-ac-unique">Non AC </label>
+                    </div>
+                    <span asp-validation-for="RoomType" class="text-danger"></span>
+                </div>
+
+                <div class="custom-field-unique">
+                    <button type="submit" class="btn btn-primary">Book Now</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</form>
+
+
+
+ 

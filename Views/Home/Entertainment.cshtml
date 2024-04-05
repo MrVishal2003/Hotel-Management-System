@@ -1,0 +1,209 @@
+﻿<style>
+    /* CSS for the first page */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .background-image4 {
+        background-image: url("../Photos/1Entertainment.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust darkness here */
+    }
+
+    .content {
+        color: white;
+        z-index: 1;
+    }
+
+        .content h1 {
+            margin-bottom: 20px;
+        }
+
+
+</style>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <span class="navbar-toggler-icon"></span>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy1-text" asp-area="right" asp-controller="Home" asp-action="Index">Urban sanctuary</a>
+                        </li>
+
+                        <div class="topnav-right">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Room">Room</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Gallary">Gallary</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Entertainment">Entertainment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Dinning">Dinning</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Login"><button class="btn btn-primary">Login</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links with a hash (#)
+        $("a[href^='#']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+<div class="background-image4">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>ENTERTAINMENT</h1>
+    </div>
+</div>
+
+<div id="gallery4-container">
+    <div class="gallery4-box">
+        <img src='../Photos/15.jpg' alt="Alternate Text" />
+        <h1>Swimming Pool</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/16.jpg' alt="Alternate Text" />
+        <h1>Gym</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/17.jpg' alt="Alternate Text" />
+        <h1>Restaurants & Bar</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/18.jpg' alt="Alternate Text" />
+        <h1>Spa</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/21.jpg' alt="Alternate Text" />
+        <h1>Game Zone</h1>
+    </div>
+    <div class="gallery4-box">
+        <img src='../Photos/20.jpg' alt="Alternate Text" />
+        <h1>Banquet Hall</h1>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <div id="container1">
+
+    <div class="box1" style="background-image: url('../../wwwroot/Photos/15.jpg');">
+    </div>
+
+    <div class="box1" style="background-image: url('../../wwwroot/Photos/16.jpg');">
+    </div>
+
+    <div class="box1" style="background-image: url('../../wwwroot/Photos/18.jpg');">
+    </div>
+
+    <div class="box1" style="background-image: url('../../wwwroot/Photos/19.jpg');">
+    </div>
+
+    <div class="box1" style="background-image: url('../../wwwroot/Photos/21.jpg');">
+    </div>
+
+    <div class="box1" style="background-image: url('../../wwwroot/Photos/20.jpg');">
+    </div>
+
+</div> *@

@@ -1,0 +1,242 @@
+﻿<style>
+
+    .heading-container {
+        display: flex;
+    }
+
+    .heading {
+        flex: 1;
+        text-align: center;
+        cursor: pointer;
+        margin: 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .active-heading {
+        background-color: #480404;
+        color: #fff;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+        .table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table td a {
+            text-decoration: none;
+            margin-right: 5px;
+        }
+
+            .table td a:hover {
+                text-decoration: underline;
+            }
+
+    /* Style for edit and delete buttons */
+    .edit-btn,
+    .delete-btn {
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 1px solid;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        color: black;
+    }
+
+    .edit-btn {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .edit-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .delete-btn {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    /* Center align the heading */
+    h2 {
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+@model Hotel_Management_System.ViewModels.AdminViewModel
+
+<div class="heading-container">
+    <h2 id="users-heading" class="heading">Users</h2>
+    <h2 id="reservations-heading" class="heading active-heading">Reservations</h2>
+    <h2 id="event-reservations-heading" class="heading">Event Reservations</h2>
+</div>
+
+@* for users *@
+<table id="users-table" class="table hidden" @if (Model.SelectedTable == "Users")
+{
+    <text>style="display: table;"</text>
+}>
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Password</th>
+            <th>ConfirmPassword</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+                <tr>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>*******</td> 
+                    <td>*******</td> 
+                </tr>
+        }
+    </tbody>
+</table>
+
+@* for reservations *@
+<table id="reservations-table" class="table" @if (Model.SelectedTable == "Reservations")
+{
+    <text>style="display: table;"</text>
+}>
+    <thead>
+        <tr>
+            <th>Check-in Date</th>
+            <th>Check-out Date</th>
+            <th>Number of Rooms</th>
+            <th>Room Floor</th>
+            <th>Number of Adults</th>
+            <th>Number of Children</th>
+            <th>Room Type</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model.Reservations)
+        {
+                <tr>
+                    <td>@reservation.CheckInDate.ToShortDateString()</td>
+                    <td>@reservation.CheckOutDate.ToShortDateString()</td>
+                    <td>@reservation.NumberOfRooms</td>
+                    <td>@reservation.RoomFloor</td>
+                    <td>@reservation.NumberOfAdults</td>
+                    <td>@reservation.NumberOfChildren</td>
+                    <td>@reservation.RoomType</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Admin", new { id = reservation.Id })" class="edit-btn">Edit</a>
+                        <a href="@Url.Action("Delete", "Admin", new { id = reservation.Id })" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+@* for eventreservations *@
+<table id="eventreservations-table" class="table hidden" @if (Model.SelectedTable == "EventReservations")
+{
+    <text>style="display: table;"</text>
+}>
+    <thead>
+        <tr>
+            <th>Check-in Date</th>
+            <th>Check-out Date</th>
+            <th>Events</th>
+            <th>Event Place</th>
+            <th>Number of Adults</th>
+            <th>Number of Children</th>
+            <th>Hall Type</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var eventreservation in Model.EventReservations)
+        {
+            <tr>
+                <td>@eventreservation.CheckInDate.ToShortDateString()</td>
+                    <td>@eventreservation.CheckOutDate.ToShortDateString()</td>
+                    <td>@eventreservation.Events</td>
+                    <td>@eventreservation.EventPlace</td>
+                    <td>@eventreservation.NumberOfAdults</td>
+                    <td>@eventreservation.NumberOfChildren</td>
+                    <td>@eventreservation.HallType</td>
+                 <td>
+                     <a href="@Url.Action("EditEventReservation", "Admin", new { id = eventreservation.Id })" class="edit-btn">Edit</a>
+                     <a href="@Url.Action("DeleteEventReservation", "Admin", new { id = eventreservation.Id })" class="delete-btn">Delete</a>
+                 </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    const reservationsHeading = document.getElementById('reservations-heading');
+    const usersHeading = document.getElementById('users-heading');
+    const eventReservationsHeading = document.getElementById('event-reservations-heading');
+
+    const reservationsTable = document.getElementById('reservations-table');
+    const usersTable = document.getElementById('users-table');
+    const eventReservationsTable = document.getElementById('eventreservations-table');
+
+    reservationsHeading.addEventListener('click', () => {
+        reservationsHeading.classList.add('active-heading');
+        usersHeading.classList.remove('active-heading');
+        eventReservationsHeading.classList.remove('active-heading');
+
+        reservationsTable.style.display = 'table';
+        usersTable.style.display = 'none';
+        eventReservationsTable.style.display = 'none';
+    });
+
+    usersHeading.addEventListener('click', () => {
+        reservationsHeading.classList.remove('active-heading');
+        usersHeading.classList.add('active-heading');
+        eventReservationsHeading.classList.remove('active-heading');
+
+        reservationsTable.style.display = 'none';
+        usersTable.style.display = 'table';
+        eventReservationsTable.style.display = 'none';
+    });
+
+    eventReservationsHeading.addEventListener('click', () => {
+        reservationsHeading.classList.remove('active-heading');
+        usersHeading.classList.remove('active-heading');
+        eventReservationsHeading.classList.add('active-heading');
+
+        reservationsTable.style.display = 'none';
+        usersTable.style.display = 'none';
+        eventReservationsTable.style.display = 'table';
+    });
+</script>

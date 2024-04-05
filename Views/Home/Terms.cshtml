@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Policy Detail";
+}
+<div class="custom-container">
+    <div class="maroon-belt">Urban sanctuary</div>
+    <div class="custom-header">Policy Detail</div>
+    <div class="boxes">
+        <div class="box">
+            <h2>House rules</h2>
+            <p>🕰️ Check-in time</p>
+            <p>🕰️ Checkout time</p>
+            <p>🚭 No smoking</p>
+            <p>🐕 No pets</p>
+        </div>
+        <div class="box">
+            <h2>Cancellation Policy</h2>
+            <p>🕰️ Free Cancellation up to 24hrs before checking</p>
+        </div>
+        <div class="box">
+            <h2>Health & Safety</h2>
+            <p>🧑‍⚕️ Cleaner in accordance with our COVID safe cleaning policy</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .custom-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .custom-header {
+        font-size: 28px;
+        font-weight: 600;
+        color: #232836;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .boxes {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0 5%; /* Adjusted padding for the boxes */
+    }
+
+    .box {
+        width: calc(33.33% - 20px);
+        background-color: darkgrey;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .maroon-belt {
+        background-color: #480404;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        font-size: 35px;
+        font-family: 'Rochester', cursive;
+        color: #fed8b1;
+    }
+</style>
+

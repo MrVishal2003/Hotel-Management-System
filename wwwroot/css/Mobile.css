@@ -1,0 +1,14 @@
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .box {
+        flex: 0 0 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        flex: 0 0 calc(100% - 40px);
+        max-width: calc(100% - 40px);
+    }
+}

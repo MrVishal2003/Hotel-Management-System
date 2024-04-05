@@ -1,0 +1,222 @@
+﻿<head>
+<style>
+
+        /* CSS for the first page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .background-image6 {
+            background-image: url("../Photos/1Events.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust darkness here */
+        }
+
+        .content {
+            color: white;
+            z-index: 1;
+        }
+
+            .content h1 {
+                margin-bottom: 20px;
+            }
+
+        #gallery4-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .custom-box {
+            position: relative;
+            overflow: hidden;
+            margin: 20px;
+            box-sizing: border-box;
+            text-align: center; /* Center text content */
+        }
+
+            .custom-box img {
+                height: 350px;
+                width: 550px;
+                transition: transform 0.3s ease; /* Add a smooth transition */
+            }
+
+            .custom-box:hover img {
+                transform: scale(1.1); /* Scale the image slightly on hover */
+            }
+
+            .custom-box .btn {
+                padding: 10px 20px; /* Adjusted padding for better visual appearance */
+                font-size: 20px;
+                background-color: #FED8B1;
+                color: black;
+                border: none;
+                border-radius: 150px; /* Increased border radius for rounded corners */
+                cursor: pointer;
+                display: inline-block; /* Ensures the button appears in the same line */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1; /* Ensure the button appears above the image */
+            }
+
+                .custom-box .btn:hover {
+                    background-color: #FFA07A;
+                }
+
+</style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <span class="navbar-toggler-icon"></span>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy1-text" asp-area="right" asp-controller="Home" asp-action="Index">Urban sanctuary</a>
+                        </li>
+
+                        <div class="topnav-right">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Room">Room</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Gallary">Gallary</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Entertainment">Entertainment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Dinning">Dinning</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fancy-text" asp-area="right" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Login"><button class="btn btn-primary">Login</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links with a hash (#)
+        $("a[href^='#']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+<div class="background-image6">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>EVENTS</h1>
+    </div>
+</div>
+
+<div id="gallery4-container">
+     <div class="custom-box">
+        <img src='../Photos/one-horizon-productions-lAze38kfdAs-unsplash.jpg' alt="Alternate Text" />
+        <h1>Wedding Celebration</h1>
+        <a asp-action="BookEvent">
+        <button class="btn">Book</button>
+        </a>
+    </div>
+    <div class="custom-box">
+        <img src='../Photos/pexels-vlada-karpovich-7100330.jpg' alt="Alternate Text" />
+        <h1>Birthday Celebration</h1>
+        <a asp-action="BookEvent">
+            <button class="btn">Book</button>
+        </a>
+    </div>
+    <div class="custom-box">
+        <img src='../Photos/pexels-nicole-michalou-5774923.jpg' alt="Alternate Text" />
+        <h1>Anniversary Celebration</h1>
+        <a asp-action="BookEvent">
+            <button class="btn">Book</button>
+        </a>
+    </div>
+    <div class="custom-box">
+        <img src='../Photos/diwali.jpg' alt="Alternate Text" />
+        <h1>Festival Celebration</h1>
+        <a asp-action="BookEvent">
+            <button class="btn">Book</button>
+        </a>
+    </div>
+    <div class="custom-box">
+        <img src='../Photos/pexels-min-an-1157557.jpg' alt="Alternate Text" />
+        <h1>Cultural Event</h1>
+        <a asp-action="BookEvent">
+            <button class="btn">Book</button>
+        </a>
+    </div>
+    <div class="custom-box">
+        <img src='../Photos/gathering.jpg' alt="Alternate Text" />
+        <h1>Other</h1>
+        <a asp-action="BookEvent">
+            <button class="btn">Book</button>
+        </a>
+    </div>
+
+</div>
+  
