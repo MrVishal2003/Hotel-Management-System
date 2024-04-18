@@ -25,3 +25,9 @@ HTML/CSS: Front-end markup and styling.
 
 # Contributor
 Hadiyal Vishal (@Hadiyal Vishal)
+
+# Acknowledgements
+
+Thanks to ASP.NET Core for providing a powerful framework for web development.
+
+Special thanks to the open-source community for their contributions and support.
