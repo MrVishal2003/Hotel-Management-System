@@ -22,3 +22,7 @@ Bootstrap: Front-end framework for creating responsive and mobile-first websites
 JavaScript/jQuery: Enhance interactivity and user experience.
 
 HTML/CSS: Front-end markup and styling.
+
+# Contributors
+Hadiyal Vishal (@Hadiyal Vishal)
+Jane Smith (@janesmith)
