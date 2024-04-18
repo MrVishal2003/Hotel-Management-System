@@ -23,6 +23,5 @@ JavaScript/jQuery: Enhance interactivity and user experience.
 
 HTML/CSS: Front-end markup and styling.
 
-# Contributors
+# Contributor
 Hadiyal Vishal (@Hadiyal Vishal)
-Jane Smith (@janesmith)
